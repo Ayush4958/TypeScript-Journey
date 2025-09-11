@@ -3,185 +3,145 @@
 ### Phase 1: Getting Started with TypeScript
 
 - Goal: Understand what TypeScript is and how to set it up.
-- What is TypeScript?
 
-Differences between TypeScript and JavaScript
+1. What is TypeScript?
+- Differences between TypeScript and JavaScript
+- Why use TypeScript?
 
-Why use TypeScript?
-
-- Setting up TypeScript
-
-Installing Node.js and npm
-
-Install TypeScript globally: npm install -g typescript
-
-Initialize a TS project: tsc --init
-
+2. Setting up TypeScript
+- Installing Node.js and npm
+- Install TypeScript globally: npm install -g typescript
+- Initialize a TS project: tsc --init
 - Using VS Code with TypeScript
 
-Your First TypeScript Program
+3. Your First TypeScript Program
+- Write a basic .ts file
+- Compile using tsc filename.ts
+- Run with Node.js
 
-Write a basic .ts file
-
-Compile using tsc filename.ts
-
-Run with Node.js
+---
 
 ### Phase 2: TypeScript Fundamentals
 
 - Goal: Learn the core syntax and types.
-- Basic Types
 
-number, string, boolean
+4. Basic Types
+- number, string, boolean
+- any, unknown, void, null, undefined
+- Type annotations
 
-any, unknown, void, null, undefined
+5. Arrays and Tuples
+- Typed arrays: number[], string[]
+- Tuples: [string, number]
 
-Type annotations
+6. Functions
+- Function types and return types
+- Optional and default parameters
+- Arrow functions with types
 
-Arrays and Tuples
+7. Objects and Type Aliases
+- Object typing
+- Type aliases (type keyword)
 
-Typed arrays: number[], string[]
-
-Tuples: [string, number]
-
-- Functions
-
-Function types and return types
-
-Optional and default parameters
-
-Arrow functions with types
-
-- Objects and Type Aliases
-
-Object typing
-
-Type aliases (type keyword)
-
-Interfaces
-
+8. Interfaces
 - Define and use interfaces
+- Difference between type and interface
 
-Difference between type and interface
+---
 
-Phase 3: Intermediate Concepts
+### Phase 3: Intermediate Concepts
 
-Goal: Use TypeScript in structured applications.
+- Goal: Use TypeScript in structured applications.
 
-Union and Intersection Types
+9. Union and Intersection Types
+- type A = string | number
+- type B = A & { age: number }
 
-type A = string | number
+10. Type Narrowing
+- Using typeof, in, instanceof
+- Type guards
 
-type B = A & { age: number }
+11. Enums
+- Numeric and string enums
 
-Type Narrowing
+12. Generics
+- Generic functions: <T>(arg: T) => T
+- Generic types and interfaces
 
-Using typeof, in, instanceof
+13. Type Assertion & Type Casting
+- as keyword
+- <Type>value syntax
 
-Type guards
+--- 
 
-Enums
+### Phase 4: Working with OOP in TypeScript
 
-Numeric and string enums
+- Goal: Learn object-oriented programming in TypeScript.
 
-Generics
+14. Classes and Objects
+- Constructors
+- Access modifiers (public, private, protected)
+- readonly properties
 
-Generic functions: <T>(arg: T) => T
+15. Inheritance
+- extends and super()
 
-Generic types and interfaces
+16. Interfaces with Classes
+- Implementing interfaces
 
-Type Assertion & Type Casting
+17. Abstract Classes and Methods
 
-as keyword
+---
 
-<Type>value syntax
+### Phase 5: Advanced TypeScript
 
-Phase 4: Working with OOP in TypeScript
+- | Goal: Master complex types and real-world patterns.
 
-Goal: Learn object-oriented programming in TypeScript.
+18. Modules and Namespaces
+- export and import
+- File-based modules
 
-Classes and Objects
+19. Advanced Types
+- Mapped types
+- Conditional types
+- Utility types (Partial, Pick, Omit, Record, etc.)
 
-Constructors
+20. Declaration Files
+- What are .d.ts files?
+- Using DefinitelyTyped (@types/...)
 
-Access modifiers (public, private, protected)
+--- 
 
-readonly properties
+### Phase 6: TypeScript with Real Projects
 
-Inheritance
+- Goal: Use TypeScript with common frameworks.
 
-extends and super()
+21. Using TypeScript with Node.js
+- Setup with Express
+- tsconfig for Node apps
 
-Interfaces with Classes
+22. TypeScript with React
+- Props and State typing
+- Function components and hooks with TypeScript
 
-Implementing interfaces
+23. TypeScript with API (Fetch / Axios)
+- Defining API response types
+- Handling errors with types
 
-Abstract Classes and Methods
+---
 
-Phase 5: Advanced TypeScript
+### Phase 7: Best Practices & Resources
 
-Goal: Master complex types and real-world patterns.
+- Goal: Write clean, scalable TypeScript code.
 
-Modules and Namespaces
+24. TypeScript Best Practices
+- Avoiding any
+- Using unknown safely
+- Keeping types DRY
 
-export and import
+25. Linting & Formatting
+- ESLint + Prettier setup for TypeScript
 
-File-based modules
-
-Advanced Types
-
-Mapped types
-
-Conditional types
-
-Utility types (Partial, Pick, Omit, Record, etc.)
-
-Declaration Files
-
-What are .d.ts files?
-
-Using DefinitelyTyped (@types/...)
-
-Phase 6: TypeScript with Real Projects
-
-Goal: Use TypeScript with common frameworks.
-
-Using TypeScript with Node.js
-
-Setup with Express
-
-tsconfig for Node apps
-
-TypeScript with React
-
-Props and State typing
-
-Function components and hooks with TypeScript
-
-TypeScript with API (Fetch / Axios)
-
-Defining API response types
-
-Handling errors with types
-
-Phase 7: Best Practices & Resources
-
-Goal: Write clean, scalable TypeScript code.
-
-TypeScript Best Practices
-
-Avoiding any
-
-Using unknown safely
-
-Keeping types DRY
-
-Linting & Formatting
-
-ESLint + Prettier setup for TypeScript
-
-Testing with TypeScript
-
-Jest with TypeScript
-
-Writing typed unit tests
+26. Testing with TypeScript
+- Jest with TypeScript
+- Writing typed unit tests
