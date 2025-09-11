@@ -4,37 +4,64 @@
 
 - Goal: Understand what TypeScript is and how to set it up.
 - What is TypeScript?
+
 Differences between TypeScript and JavaScript
+
 Why use TypeScript?
+
 - Setting up TypeScript
+
 Installing Node.js and npm
+
 Install TypeScript globally: npm install -g typescript
+
 Initialize a TS project: tsc --init
+
 - Using VS Code with TypeScript
+
 Your First TypeScript Program
+
 Write a basic .ts file
+
 Compile using tsc filename.ts
+
 Run with Node.js
 
 ### Phase 2: TypeScript Fundamentals
 
 - Goal: Learn the core syntax and types.
 - Basic Types
+
 number, string, boolean
+
 any, unknown, void, null, undefined
+
 Type annotations
+
 Arrays and Tuples
+
 Typed arrays: number[], string[]
+
 Tuples: [string, number]
+
 - Functions
+
 Function types and return types
+
 Optional and default parameters
+
 Arrow functions with types
+
 - Objects and Type Aliases
+
 Object typing
+
 Type aliases (type keyword)
+
 Interfaces
+
 - Define and use interfaces
+
 Difference between type and interface
 
 Phase 3: Intermediate Concepts
