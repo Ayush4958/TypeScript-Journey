@@ -15,9 +15,9 @@ function signUp(name : string , email :string , pass : string , paid : boolean){
 signUp("Ayush" , "Ayush@example.com" , "123456" , true);
 
 // Arrow function
-let logIn = () =>{
+let logIn = (name : string , email :string , paid : boolean = false) =>{ // setting default value of an argument
     return "Hello , Ayush !!!";
 }
-logIn();
+logIn("Ayush" , "Ayush@example.com");
 
 export {}; 
