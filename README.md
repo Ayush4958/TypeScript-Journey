@@ -104,3 +104,95 @@ const handleError = (errmsg: string): never => {
 ---
 
 This lecture focused on strengthening the understanding of function types, default arguments, and special return types like `void` and `never` in TypeScript.
+
+---
+
+# 📘 Lecture 3: TypeScript Objects and Object Typing
+
+## ✅ What I Learned
+
+### 📦 Creating and Using Objects
+
+```ts
+const user = {
+  name: "Ayush",
+  email: "bhandariaysuh@gmail.com",
+  active: false
+};
+```
+
+- Basic object structure with TypeScript-compatible syntax.
+
+### 📥 Passing an Object as a Function Argument with Inline Type
+
+```ts
+function createUser(name: string, paid: boolean): { name: string; paid: boolean } {
+  return { name, paid };
+}
+
+createUser("ayush", true);
+```
+
+- Function accepts parameters and returns an object with a specific type.
+
+### ⚠️ Object with Extra Properties
+
+```ts
+const user2 = {
+  name: "Ayush3",
+  paid: false,
+  email: "bhandariaysuh@gmail.com"
+};
+
+createUser(user2);
+```
+
+- Even if `user2` has extra properties, TypeScript doesn't throw an error — known as *object literal widening* or *excess property checks* bypass.
+
+### 🔄 Returning Object with Multiple Data Types
+
+```ts
+function createCourse(): { name: string; price: number } {
+  return { name: "React-JS", price: 499 };
+}
+```
+
+- Shows how to define and return an object with typed keys.
+
+### 🧱 Creating Custom Object Types with `type` Keyword
+
+```ts
+type student = {
+  name: string;
+  active: boolean;
+  email: string;
+};
+```
+
+- Used to define a reusable object structure for future variables or parameters.
+
+### 🧪 Using Custom Object Type in a Function Parameter
+
+```ts
+function idealUser({ user }: { user: student }) {}
+```
+
+- The parameter must strictly match the structure of the `student` type.
+
+### 🧹 Example of Matching Object
+
+```ts
+const emptyData = {
+  name: "",
+  active: false,
+  email: ""
+};
+
+idealUser({ user: emptyData });
+```
+
+- A valid object passed that satisfies the `student` type structure.
+
+---
+
+This lecture focused on mastering object typing, passing objects to functions, and defining reusable object types using `type`. These are essential for building scalable TypeScript applications.
