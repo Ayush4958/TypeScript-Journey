@@ -27,3 +27,9 @@ function creatCOurse() {
 function idealUser(_a) {
     var user = _a.user;
 }
+var emptyData = {
+    name: "",
+    active: false,
+    email: "",
+};
+idealUser({ user: emptyData });
