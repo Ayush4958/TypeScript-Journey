@@ -25,11 +25,19 @@ function creatCOurse():{name: string , price : number}{
 // defining the object , in this we define what type of value we parse not defining the keys and value pair
 type student = {
     name : string ; 
-    paid : boolean ;
+    active : boolean ;
     email : string ;
 }
 
 // in this we define we have a parameter user and next of defining the user that user should have data type as student
 function idealUser({user}:{user:student}){}
+
+const emptyData = {
+    name : "",
+    active : false,
+    email : "",
+}
+
+idealUser({user : emptyData});
 
 export {}
