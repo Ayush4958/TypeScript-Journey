@@ -23,21 +23,34 @@ function creatCOurse():{name: string , price : number}{
 };
 
 // defining the object , in this we define what type of value we parse not defining the keys and value pair
-type student = {
+type student = { // Now no one can change the _id parameter as it is only read only
+    //readonly _id : string;
     name : string ; 
     active : boolean ;
     email : string ;
+    card? : number; // this will tell that its not that this key value will be recieved
 }
 
 // in this we define we have a parameter user and next of defining the user that user should have data type as student
 function idealUser({user}:{user:student}){}
-
 const emptyData = {
     name : "",
     active : false,
     email : "",
 }
-
 idealUser({user : emptyData});
+
+// merging of 2 type
+type cardNumber = {
+    acnum : number;
+}
+
+type cardHolder = {
+    name : string ;
+}
+// & will merge the 2 types of in another type
+type cardDetails = cardNumber & cardHolder & {
+    cvv : number ;
+}
 
 export {}
