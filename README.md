@@ -196,3 +196,63 @@ idealUser({ user: emptyData });
 ---
 
 This lecture focused on mastering object typing, passing objects to functions, and defining reusable object types using `type`. These are essential for building scalable TypeScript applications.
+
+---
+
+
+# 📘 Lecture 4: TypeScript Arrays
+
+## ✅ What I Learned
+
+### 🧵 Declaring Arrays with Specific Types
+
+```ts
+const heroes: string[] = [];
+const heroesRank: Array<number> = [];
+```
+
+- Two ways to declare typed arrays:
+  - `type[]` syntax (e.g., `string[]`)
+  - `Array<type>` syntax (e.g., `Array<number>`)
+- These arrays will only accept values of the specified type.
+
+```ts
+heroesRank.push(5);    // ✅ valid
+heroes.push("Hulk");   // ✅ valid
+```
+
+---
+
+### 🧠 Typing Arrays of Objects
+
+```ts
+type user = {
+  name: string;
+  active: boolean;
+};
+
+const allUsers: user[] = [];
+allUsers.push({ name: "Ayush", active: true });
+```
+
+- Defined a custom type `user`.
+- Declared an array `allUsers` of type `user[]`.
+- Ensures that all elements in the array match the `user` object structure.
+
+---
+
+### 🔁 Nested Arrays (2D Arrays)
+
+```ts
+const Models: number[][] = [
+  [244, 255, 199],
+  [120, 180, 210]
+];
+```
+
+- Declares a **2D array** of numbers.
+- Each sub-array must also be of type `number[]`.
+
+---
+
+This lecture solidified my understanding of how to declare and use **typed arrays**, **arrays of objects**, and **nested arrays** in TypeScript — helping me enforce data consistency and structure in collections.
