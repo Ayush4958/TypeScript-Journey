@@ -1,10 +1,10 @@
 // Array define as string array
 // 2 methods to declare array with certain data type
-const heroes: string[] = [];
-const heroesRank: Array<number> = [];
+const heroe: string[] = [];
+const Rank: Array<number> = [];
 
-heroesRank.push(5);
-heroes.push("Hulk");
+Rank.push(5);
+heroe.push("Hulk");
 
 // Setting the data type of Array 
 type user = {
@@ -12,12 +12,12 @@ type user = {
   active: boolean;
 };
 
-const allUsers: user[] = [];
+const allUser: user[] = [];
 allUsers.push({ name: "Ayush", active: true });
 
 // Nested Array Data Type
 // This example will only have number data type array inside an array
-const Models: number[][] = [
+const Model: number[][] = [
   [244, 255, 199],
   [120, 180, 210],
 ];
