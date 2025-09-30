@@ -256,3 +256,76 @@ const Models: number[][] = [
 ---
 
 This lecture solidified my understanding of how to declare and use **typed arrays**, **arrays of objects**, and **nested arrays** in TypeScript — helping me enforce data consistency and structure in collections.
+
+---
+
+
+# 📘 Lecture 5: TypeScript Union Types
+
+## ✅ What I Learned
+
+### 🔀 Union Types in Variables
+
+```ts
+let score: number | string = 33;
+score = 44;         // ✅ number
+score = "I win";    // ✅ string
+```
+
+- Union types allow a variable to hold more than one data type.
+
+---
+
+### 👥 Union Types with Custom Objects
+
+```ts
+type user = {
+  name: string;
+  id: number;
+};
+
+type admin = {
+  username: string;
+  id: number;
+};
+
+let ayush: user | admin = { name: "Ayush", id: 24 };
+ayush = { username: "Ayush", id: 24 };
+```
+
+- `ayush` can be either of `user` or `admin` type.
+- Helps model flexible object structures.
+
+---
+
+### 🔍 Union Narrowing with `typeof`
+
+```ts
+function getId(id: number | string) {
+  if (typeof id === "string") {
+    id.toLowerCase();
+  }
+}
+```
+
+- Union narrowing helps us safely use properties based on type checks.
+
+---
+
+### 📦 Arrays with Union Types
+
+```ts
+const Data: number[] | string[] = [1, 2, 3, 4];
+```
+
+- This means the array can be either all numbers **or** all strings — not mixed.
+
+```ts
+const Data2: (number | string)[] = [1, 2, 3, "4"];
+```
+
+- This version allows mixing both `number` and `string` values inside the same array.
+
+---
+
+This lecture enhanced my understanding of how to handle **multiple possible types** using `union types`, perform **type narrowing**, and properly use unions in arrays and objects.
