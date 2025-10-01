@@ -329,3 +329,7 @@ const Data2: (number | string)[] = [1, 2, 3, "4"];
 ---
 
 This lecture enhanced my understanding of how to handle **multiple possible types** using `union types`, perform **type narrowing**, and properly use unions in arrays and objects.
+
+---
+
+# 📘 Lecture 6: TypeScript Tuples
