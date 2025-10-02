@@ -333,3 +333,43 @@ This lecture enhanced my understanding of how to handle **multiple possible type
 ---
 
 # 📘 Lecture 6: TypeScript Tuples
+
+## ✅ What I Learned
+
+### 🧷 Creating a Tuple
+
+```ts
+const user1: [string, number, boolean] = ["Ayush !!", 2, false];
+```
+
+- A **tuple** enforces:
+  - Fixed number of elements
+  - Specific data types in a defined order
+- `user1` must always be `[string, number, boolean]`
+
+---
+
+### 🧪 Tuple with Type Alias
+
+```ts
+type Ofrgb = [number, number, number];
+const rgb: Ofrgb = [255, 233, 190];
+```
+
+- Defined a reusable tuple type alias `Ofrgb` for RGB color values.
+
+---
+
+### ⚠️ Issues with Tuples
+
+```ts
+rgb[1] = 400;           // ✅ Can manually change value
+user1.push("sddsvs");   // ✅ Can push extra values without TypeScript error
+```
+
+- Tuples in TypeScript allow mutation like regular arrays.
+- To avoid this, developers should apply additional runtime checks or constraints.
+
+---
+
+This lecture introduced **tuples** in TypeScript — an array-like structure with **strict typing and order**. Though they add structure, it's important to note that tuples can still be mutated like normal arrays unless handled carefully.
