@@ -373,3 +373,59 @@ user1.push("sddsvs");   // ✅ Can push extra values without TypeScript error
 ---
 
 This lecture introduced **tuples** in TypeScript — an array-like structure with **strict typing and order**. Though they add structure, it's important to note that tuples can still be mutated like normal arrays unless handled carefully.
+
+---
+
+# 📘 Lecture 7: TypeScript `enum`
+
+## ✅ What I Learned
+
+### 🎯 What is `enum` in TypeScript?
+An `enum` (short for "enumeration") is a special TypeScript feature that allows you to define a set of named constants — either numeric or string-based.
+
+Enums make your code **more readable**, **less error-prone**, and easier to manage when working with fixed sets of related values.
+
+---
+
+### 🧠 Why and When Should You Use `enum`?
+✅ Use `enum` when:
+- You have a **set of related options** (like roles, states, modes, etc.)
+- You want **clear, descriptive names** instead of magic numbers or strings
+- You want to **improve code readability** and **reduce bugs** due to mistyped strings
+
+❌ Avoid using `enum` when:
+- The values are dynamic or fetched from APIs at runtime
+- You need flexibility that doesn't align with fixed sets
+
+---
+
+### ✏️ Example Code
+
+```ts
+const enum SeatChoice {
+  Aisle = 10,         // Starts from 10
+  Middle = 15,        // Next value will be 16 if not explicitly set
+  Window,             // Will be 16 (auto-incremented from Middle)
+  Fourth = "fourth"   // Explicit string value; all values must be strings if one is
+}
+
+const Bseat = SeatChoice.Aisle;
+```
+
+- `Aisle` starts at 10.
+- `Middle` is manually set to 15.
+- `Window` becomes 16 automatically.
+- If any value is a string (like `Fourth`), **all enum values must be strings**.
+
+> ❗ `const enum` is used for **performance optimization** — it gets inlined and removed from the JS output.
+
+---
+
+### ✅ Benefits of Using Enums
+- Cleaner and descriptive code
+- Reduces typos from using raw strings/numbers
+- Allows grouping of constants in one place
+
+---
+
+This lecture helped me understand how `enum` brings more structure and clarity when managing fixed constant values in TypeScript projects.
