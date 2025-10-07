@@ -429,3 +429,90 @@ const Bseat = SeatChoice.Aisle;
 ---
 
 This lecture helped me understand how `enum` brings more structure and clarity when managing fixed constant values in TypeScript projects.
+
+ ---
+ 
+# 📘 Lecture 8: TypeScript Interfaces
+
+## ✅ What I Learned
+
+### 🧩 Defining an Interface
+
+```ts
+interface user {
+  readonly dbId: number;
+  email: string;
+  name: string;
+  userId: number;
+  StartTrial(): string;
+  getCoupon(name: string, cvalue: number): number;
+}
+```
+
+- `interface` is used to define the **structure** of an object.
+- It defines **properties and methods** expected in an object.
+- `readonly` makes the property immutable after initialization.
+
+---
+
+### ➕ Interface Reopening (Interface Merging)
+
+```ts
+interface user {
+  githubToken: string;
+}
+```
+
+- You can **reopen** an existing interface to add more properties (only works with interfaces, not type aliases).
+- This is useful in **large codebases** where additional properties are added in separate modules.
+
+---
+
+### 🧬 Interface Inheritance
+
+```ts
+interface Admin extends user {
+  role: "TL" | "HR" | "PM" | "Admin";
+}
+```
+
+- `Admin` interface **inherits** all properties from `user` and adds its own `role` property.
+- Promotes **code reuse** and **extensibility**.
+
+---
+
+### 🧪 Using Interfaces in Objects
+
+```ts
+var ayush: user = {
+  dbId: 552211,
+  email: "ayush@gmail.com",
+  name: "Ayush",
+  userId: 1,
+  githubToken: "githubAyush1234",
+  StartTrial: () => "Trial Started",
+  getCoupon: (name, value) => 10
+};
+
+var AdminAyush: Admin = {
+  role: "TL",
+  dbId: 552211,
+  email: "ayush@gmail.com",
+  name: "Ayush",
+  userId: 1,
+  githubToken: "githubAyush1234",
+  StartTrial: () => "Trial Started",
+  getCoupon: (name, value) => 10
+};
+```
+
+- `ayush` follows the `user` interface, while `AdminAyush` follows the `Admin` interface.
+- Methods inside interfaces can be defined and implemented directly within the object.
+
+---
+
+## 🧠 Summary
+
+- Interfaces define **contracts** for objects and classes.
+- You can **extend**, **reopen**, and **inherit** interfaces.
+- Prefer interfaces over type aliases when working with object structures, especially for large and scalable codebases.
