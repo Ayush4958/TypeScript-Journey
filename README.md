@@ -516,3 +516,6 @@ var AdminAyush: Admin = {
 - Interfaces define **contracts** for objects and classes.
 - You can **extend**, **reopen**, and **inherit** interfaces.
 - Prefer interfaces over type aliases when working with object structures, especially for large and scalable codebases.
+
+---
+### Now TS in Real World Project 
