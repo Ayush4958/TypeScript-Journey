@@ -518,4 +518,12 @@ var AdminAyush: Admin = {
 - Prefer interfaces over type aliases when working with object structures, especially for large and scalable codebases.
 
 ---
-### Now TS in Real World Project 
+
+# 🎯 Lecture 9 – Setting Up a TypeScript Project
+
+In this lecture, I learned how to properly set up a **TypeScript project** structure.  
+This setup is essential before starting any TypeScript-based application or experimenting with new concepts.
+
+---
+
+
