@@ -526,4 +526,104 @@ This setup is essential before starting any TypeScript-based application or expe
 
 ---
 
+# Lecture 10 — Classes and Access Modifiers in TypeScript
 
+In this lecture, I explored how **classes** work in TypeScript and how to use access modifiers like `public`, `private`, `protected`, and `readonly` to manage data access within classes.
+
+## Topics Covered
+
+### 1. Defining a Class
+A **class** is a blueprint for creating objects with both properties and methods.
+
+```ts
+class User {
+  public name: string;
+  public email: string;
+  private age: number;
+  readonly country: string = "India";
+
+  constructor(name: string, email: string, age: number) {
+    this.name = name;
+    this.email = email;
+    this.age = age;
+  }
+}
+```
+
+The `User` class demonstrates:
+- Use of **public** (accessible anywhere)
+- **Private** property (accessible only inside the class)
+- **Readonly** property (cannot be changed after initialization)
+- Constructor for initializing values
+
+---
+
+### 2. Access Modifiers
+
+| Modifier | Description |
+|-----------|-------------|
+| `public` | Default. Accessible anywhere. |
+| `private` | Accessible only inside the same class. |
+| `protected` | Accessible in the class and its subclasses. |
+| `readonly` | Value can only be assigned once. |
+
+Example:
+```ts
+private age: number;
+protected gdp: number = 50000;
+readonly country: string = "India";
+```
+
+---
+
+### 3. Parameter Properties in Constructor
+You can define and assign properties directly in the constructor to save code.
+
+```ts
+class Empire {
+  constructor(
+    public cname: string,
+    public population: number,
+    public language: string,
+    private militaryPower: number = 1000,
+    protected gdp: number = 50000
+  ) {}
+}
+```
+
+---
+
+### 4. Getter and Setter Methods
+Used to **access and modify private properties** safely.
+
+```ts
+get MilitaryPower(): string {
+  return `The Military power of ${this.cname} is ${this.militaryPower} forces`;
+}
+
+set MilitaryPower(power: number) {
+  if (power <= 1000) throw new Error("Military power is less than or same as before");
+  this.militaryPower = power;
+}
+```
+
+---
+
+### 5. Private Methods
+A **private method** is only accessible inside the same class.
+
+```ts
+private display(): string {
+  return `The Empire ${this.cname} speaks ${this.language}`;
+}
+```
+
+---
+
+## Key Learnings
+- `public`, `private`, `protected`, and `readonly` define access scope.
+- Getters and setters help control and validate private data access.
+- Constructors can define and assign class properties directly.
+- Private methods and encapsulation increase data security.
+
+---
