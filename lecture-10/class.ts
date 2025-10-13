@@ -15,6 +15,8 @@ class User {
     }
 }
 var ayush = new User("Ayush" , "ayushex@.com" , 22);
+// Error : cannot assign to 'country' because it have read-only property of TypeScript
+// ayush.country = "Japan" 
 
 // with this way of defining class , you dont have to write properties and constructor separately
 class Empire {
@@ -24,7 +26,8 @@ class Empire {
         public cname : string , 
         public population : number , 
         public language : string , 
-        private militaryPower : number = 1000
+        private militaryPower : number = 1000 , 
+        protected gdp : number = 50000 , // Protected class can be accessed in inhertited class but not outside the class
     ){}
 
     get EmpirePopulation() : string {
@@ -50,7 +53,15 @@ class Empire {
     }
 }
 
+class SubEmpire extends Empire {
 
+    // It will have all the properties and methods of Empire class but it will not have access and contain any private properties and methods 
+    genrationalWealth : boolean = true ;
+    
+    changeGDP (addedGDP : number): number{
+        // here we access the protected property from parent class
+        this.gdp = this.gdp + addedGDP ;;
+        return this.gdp
+    }
 
-// Error : cannot assign to 'country' because it have read-only property of TypeScript
-// ayush.country = "Japan" 
+}

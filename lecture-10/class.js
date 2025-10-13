@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // Classes in TypeScript and the modifiers (public , private , readonly , )
 var User = /** @class */ (function () {
     function User(name, email, age) {
@@ -12,12 +27,14 @@ var User = /** @class */ (function () {
 var ayush = new User("Ayush", "ayushex@.com", 22);
 // with this way of defining class , you dont have to write properties and constructor separately
 var Empire = /** @class */ (function () {
-    function Empire(cname, population, language, militaryPower) {
+    function Empire(cname, population, language, militaryPower, gdp) {
         if (militaryPower === void 0) { militaryPower = 1000; }
+        if (gdp === void 0) { gdp = 50000; }
         this.cname = cname;
         this.population = population;
         this.language = language;
         this.militaryPower = militaryPower;
+        this.gdp = gdp;
     }
     Object.defineProperty(Empire.prototype, "EmpirePopulation", {
         get: function () {
@@ -47,5 +64,21 @@ var Empire = /** @class */ (function () {
     };
     return Empire;
 }());
+var SubEmpire = /** @class */ (function (_super) {
+    __extends(SubEmpire, _super);
+    function SubEmpire() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        // It will have all the properties and methods of Empire class but it will not have access and contain any private properties and methods 
+        _this.genrationalWealth = true;
+        return _this;
+    }
+    SubEmpire.prototype.changeGDP = function (addedGDP) {
+        // here we access the protected property from parent class
+        this.gdp = this.gdp + addedGDP;
+        ;
+        return this.gdp;
+    };
+    return SubEmpire;
+}(Empire));
 // Error : cannot assign to 'country' because it have read-only property of TypeScript
 // ayush.country = "Japan" 
