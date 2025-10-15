@@ -63,5 +63,6 @@ class SubEmpire extends Empire {
         this.gdp = this.gdp + addedGDP ;;
         return this.gdp
     }
-
 }
+
+// there would be error if we copy my code but its just showing the error on declaring variable name 
