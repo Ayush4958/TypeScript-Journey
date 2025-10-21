@@ -627,3 +627,85 @@ private display(): string {
 - Private methods and encapsulation increase data security.
 
 ---
+
+# Lecture 11 - Abstract Classes in TypeScript
+
+## 🧠 Concept Overview
+Abstract classes in TypeScript are base classes that **cannot be instantiated directly**.  
+They act as **blueprints** for other classes and are used to enforce a structure for derived classes.
+
+---
+
+## 📘 Key Concepts
+
+### 1. Abstract Class
+An abstract class can contain both **implemented methods** and **abstract methods**.  
+Abstract methods don’t have any implementation and must be defined in the derived class.
+
+```ts
+abstract class Animal {
+  constructor(
+    public name: string,
+    public species: string,
+    public gender: "Male" | "Female"
+  ) {}
+
+  abstract makeSound(): string;
+}
+```
+Here:
+- The `abstract` keyword prevents direct instantiation.
+- The `makeSound()` method must be implemented by subclasses.
+
+---
+
+### 2. Cannot Instantiate Abstract Class
+```ts
+// ❌ Error: Cannot create instance of abstract class
+// const dog = new Animal("James", "Monkey", "Male");
+```
+You cannot create objects of `Animal` directly.
+
+---
+
+### 3. Extending Abstract Class
+To use an abstract class, you must **extend** it and **implement** the abstract methods.
+
+```ts
+class Dog extends Animal {
+  constructor(
+    public name: string,
+    public species: string,
+    public gender: "Male" | "Female",
+    public sound: string
+  ) {
+    super(name, species, gender);
+  }
+
+  makeSound(): string {
+    return `The Dog makes ${this.sound}`;
+  }
+}
+```
+
+Here:
+- `Dog` extends the `Animal` class.
+- It defines the `makeSound()` method required by the abstract base class.
+
+---
+
+## ✅ Example Output
+```ts
+const dog = new Dog("Tommy", "Dog", "Male", "Bark");
+console.log(dog.makeSound()); // Output: The Dog makes Bark
+```
+
+---
+
+**This lecture covered:**  
+✔ Abstract classes  
+✔ Abstract methods  
+✔ Inheritance and implementation in derived classes  
+✔ Usage of `super()` constructor  
+
+---
