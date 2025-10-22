@@ -709,3 +709,88 @@ console.log(dog.makeSound()); // Output: The Dog makes Bark
 ✔ Usage of `super()` constructor  
 
 ---
+
+# Lecture 12 - Generics in TypeScript
+
+## 🧠 Overview
+This lecture explains **Generics** in TypeScript — a powerful feature that allows you to create reusable components that work with multiple types instead of a single one. Generics make your code more flexible and type-safe.
+
+---
+
+## 📘 Concepts Covered
+
+
+### 1. **Type Alias for Generic Function**
+```ts
+function identityThreeType<Type>(val: Type): Type {
+  return val;
+}
+```
+- You can use any name instead of `T`, like `Type`, for better readability.
+
+---
+
+### 2. **Generics with Custom Types**
+You can use interfaces or objects with generics.  
+```ts
+interface Bottle {
+  name: string;
+  price: number;
+}
+
+identityThreeBottle({ name: "Milton", price: 100 });
+```
+- Ensures that only `Bottle` type objects are passed.
+
+---
+
+### 3. **Generics with Arrays**
+There are multiple ways to define array generics.  
+```ts
+function getProducts<T>(products: Array<T>): T[] {
+  return new Array().concat(...products);
+}
+```
+- Useful for returning arrays of generic types.
+
+---
+
+### 4. **Multiple Type Parameters**
+You can use multiple generics in a single function.
+```ts
+function uniqueFunction<T, U>(param1: T, param2: U): object {
+  return { param1, param2 };
+}
+```
+- Allows combining different data types dynamically.
+
+---
+
+### 5. **Generics with Constraints**
+Constraints ensure that a generic type must follow a specific structure.  
+```ts
+interface Database {
+  connection: string;
+  id: number;
+  pass: string;
+}
+
+function uniqueFunction2<T, U extends Database>(param1: T, param2: U): object {
+  return { param1, param2 };
+}
+```
+- Here, `U` must have all properties of `Database`.
+- This ensures **type safety** when dealing with structured data.
+
+---
+
+## 🧩 Summary
+| Concept | Description |
+|----------|-------------|
+| `T`, `U`, etc. | Generic placeholders |
+| Generic Functions | Reusable with any type |
+| Constraints (`extends`) | Limit generic types to specific structures |
+| Arrays in Generics | Define arrays that hold generic elements |
+| Multiple Generics | Combine different type parameters |
+
+---
