@@ -794,3 +794,78 @@ function uniqueFunction2<T, U extends Database>(param1: T, param2: U): object {
 | Multiple Generics | Combine different type parameters |
 
 ---
+
+# 📘 Lecture 13 - Type Narrowing in TypeScript
+
+## 🎯 Overview
+Type Narrowing in TypeScript refines the type of a variable within a scope based on certain checks (`typeof`, `instanceof`, `in`, or custom type predicates).  
+This allows TypeScript to identify specific types at runtime for better safety and clarity.
+
+---
+
+## 🧩 Key Concepts Covered
+
+### 1. **Typeof Narrowing**
+Used to check primitive types like `string`, `number`, etc.
+```ts
+function detectType(val: number | string) {
+  if (typeof val === "string") {
+    return val.toLowerCase();
+  }
+  return val + 3;
+}
+```
+
+---
+
+### 2. **Truthiness Narrowing**
+Checks if a value is truthy or falsy.
+```ts
+function provideId(id: string | null) {
+  if (!id) {
+    return new Error("ID not provided");
+  }
+  return id.toLowerCase();
+}
+```
+
+---
+
+### 3. **Using `typeof` and `instanceof`**
+```ts
+function logValue(x: Date | string) {
+  if (x instanceof Date) {
+    console.log(x.toUTCString());
+  } else {
+    console.log(x.toUpperCase());
+  }
+}
+```
+
+---
+
+### 4. **Using `in` Operator**
+Helps narrow down object types using property existence.
+```ts
+function isAdminAcc(account: User | Admin) {
+  if ("isAdmin" in account) {
+    return account.isAdmin;
+  }
+}
+```
+
+---
+
+## ⚙️ Summary
+
+| Concept | Description | Example |
+|----------|--------------|----------|
+| `typeof` | Checks primitive types | `typeof val === "string"` |
+| `instanceof` | Checks class instances | `x instanceof Date` |
+| `in` | Checks property existence | `"isAdmin" in account` |
+| Type Predicate | Custom type guard | `animal is Fish` |
+| Discriminated Union | Uses literal type field | `shape: "circle" | "square"` |
+| `never` | Ensures all union cases handled | `_exhaustiveCheck: never` |
+
+---
+
